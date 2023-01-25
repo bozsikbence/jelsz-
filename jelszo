@@ -1,0 +1,58 @@
+import datetime as DT
+def meres(db):
+    e1=0
+    e2=10**db
+    kezd=DT.datetime.now()
+    for i in range(e1,e2):
+        s=str(i)
+        x=(s==s)
+    zar=DT.datetime.now()
+    d=zar-kezd
+    return(d.millisecond/1000)
+def szamjegy(jsz):
+    s=0
+    chs="0123456789"
+    for c in jsz:
+        s+=c in chs
+        return (s>0)
+def kisbetu(jsz):
+    s=0
+    chs="mnbvcxyíűáúőéplokijuhzgtfdreswaqóüö"
+    for c in jsz:
+        s+=c in chs
+        return (s>0)
+def nagybetu(jsz):
+    s=0
+    chs="MNBVCXYÍŰÁÉLKJHGFDSAQWERTZUIOPŐÚÓÜÖ"
+    for c in jsz:
+        s+=c in chs
+        return (s>0)
+    elszo=input("jelszó:")
+    hossz=len(jelszo)
+    print(f"A jelszo mérete:{hossz}karakter.")
+    print(f"A jelszóban van számjegy:{vb_szamjegy}")
+    print(f"A jelszóban van kisbetű:{vb_kisbetu}")
+    print(f"A jelszóban van nagybetű:{vb_nagybetu}")
+    db=meres(4)
+    print(f"a referencia-idő:{db}ezredmásodperc")
+    k=0
+    if vb_szamjegy:
+        k+=10
+    if vb_kisbetu:
+        k+34
+    if vb_nagybetu:
+        k+34
+    e=k**hossz
+    ido=e/10000*db
+    print(f"az7 elvégzendő műveletek száma:{e}művelet")
+    print(f"a megfejtés ideje:{ido}ezredmásodperc")    
+    vb_szamjegy=szamjegy(jelszo)
+    vb_kisbetu=kisbetu(jelszo)
+    vb_nagybetu=nagybetu(jelszo)
+
+
+
+
+
+for db in range(3,11):
+print(f"A megfejtés ideje {db} karakter esetén:{meres(db)} ezredmádosperc")
